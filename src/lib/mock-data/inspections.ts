@@ -1,0 +1,72 @@
+/**
+ * Seed Data: Legal Metrology Officer Inspections
+ */
+
+import { EnforcementInspection } from '@/types/portal';
+
+export const DEMO_INSPECTIONS: EnforcementInspection[] = [
+  {
+    id: 'INSP-2026-0301',
+    inspectionCode: 'DEL-CENT-INSP-2026-0301',
+    retailerName: 'SuperMart Hypermarket India Ltd',
+    retailerGSTIN: '07AAACS1429B1Z8',
+    address: 'Block B, Radial Road 2, Connaught Place, New Delhi 110001',
+    jurisdiction: 'Delhi State - Central District',
+    officerInCharge: 'Inspector V. Anand',
+    scheduledDate: '2026-11-04 10:30',
+    status: 'SCHEDULED',
+    packagesSampled: 45,
+    infractionsFound: 4,
+    noticeIssued: true,
+    notes: 'Triggered by citizen complaint CMP-2026-1044 regarding non-metric net quantity (MLTRS) and missing tax clause.',
+  },
+  {
+    id: 'INSP-2026-0299',
+    inspectionCode: 'MUM-SUB-INSP-2026-0299',
+    retailerName: 'Aura Botanics Flagship Outlet',
+    retailerGSTIN: '27AABCA9918K1ZM',
+    address: 'Shop 104, Infiniti Mall, Andheri West, Mumbai 400053',
+    jurisdiction: 'Maharashtra - Mumbai Suburban',
+    officerInCharge: 'Senior Inspector P. Deshmukh',
+    scheduledDate: '2026-11-01 14:00',
+    status: 'COMPLETED',
+    packagesSampled: 80,
+    infractionsFound: 12,
+    noticeIssued: true,
+    compoundingFeeLeviedInr: 25000,
+    notes: 'Inspection completed. Show cause notice served for non-compliant batch of Herbal Face Wash. Seizure memorandum executed.',
+  },
+  {
+    id: 'INSP-2026-0298',
+    inspectionCode: 'BLR-URB-INSP-2026-0298',
+    retailerName: 'Prime Retail Mart E-Commerce Hub',
+    retailerGSTIN: '29AABCP4019D1Z4',
+    address: 'Industrial Plot 18, Peenya 2nd Stage, Bengaluru 560058',
+    jurisdiction: 'Karnataka - Bengaluru Urban',
+    officerInCharge: 'Inspector M. Patil',
+    scheduledDate: '2026-10-29 11:15',
+    status: 'COMPLETED',
+    packagesSampled: 120,
+    infractionsFound: 3,
+    noticeIssued: false,
+    compoundingFeeLeviedInr: 0,
+    notes: 'Marketplace seller adherence check. Minor advisory issued regarding font height on imported peripherals.',
+  },
+  {
+    id: 'INSP-2026-0295',
+    inspectionCode: 'DEL-STH-INSP-2026-0295',
+    retailerName: 'Krishna Dairy & Groceries',
+    retailerGSTIN: '07BZXPM8820F1ZT',
+    address: 'Shop 12, Main Market, Lajpat Nagar, Delhi 110024',
+    jurisdiction: 'Delhi State - South District',
+    officerInCharge: 'Inspector S. Kaushik',
+    scheduledDate: '2026-10-25 15:30',
+    status: 'COMPLETED',
+    packagesSampled: 30,
+    infractionsFound: 6,
+    noticeIssued: true,
+    compoundingFeeLeviedInr: 15000,
+    notes: 'Dual pricing sticker offense compounded under Section 48 of the Act.',
+  },
+];
+

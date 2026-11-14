@@ -1,0 +1,137 @@
+/**
+ * Statutory Metrology Rules Definition
+ * Legal Metrology (Packaged Commodities) Rules, 2011 as amended up to 2024
+ */
+
+import { StatutoryRuleDefinition } from '@/types/compliance';
+
+export const STATUTORY_RULES_REGISTRY: StatutoryRuleDefinition[] = [
+  {
+    id: 'rule-pcr-6-1-a',
+    ruleCode: 'PCR-2011-R06-1A',
+    actReference: 'Legal Metrology (Packaged Commodities) Rules, 2011',
+    section: 'Rule 6(1)(a)',
+    title: 'Manufacturer / Packer / Importer Identity & Address',
+    description:
+      'The name and complete physical postal address of the manufacturer, or where the manufacturer is not the packer, the name and address of the manufacturer and packer, or in case of an imported package, the name and address of the importer.',
+    categoryScope: 'ALL',
+    mandatoryFields: ['name', 'address', 'pin_code'],
+    validationRegex: '(mfg|manufactured|packed|marketed|imported)\\s+by',
+    minFontHeightMm: 2.0,
+    active: true,
+    version: '2024.1.0',
+    lastAmendedDate: '2024-01-01',
+  },
+  {
+    id: 'rule-pcr-6-1-b',
+    ruleCode: 'PCR-2011-R06-1B',
+    actReference: 'Legal Metrology (Packaged Commodities) Rules, 2011',
+    section: 'Rule 6(1)(b)',
+    title: 'Common or Generic Name of Commodity',
+    description:
+      'The common or generic names of the commodity contained in the package, and in case of packages with more than one product, the name and number or quantity of each product.',
+    categoryScope: 'ALL',
+    mandatoryFields: ['generic_name'],
+    minFontHeightMm: 2.0,
+    active: true,
+    version: '2024.1.0',
+    lastAmendedDate: '2024-01-01',
+  },
+  {
+    id: 'rule-pcr-6-1-c',
+    ruleCode: 'PCR-2011-R06-1C',
+    actReference: 'Legal Metrology (Packaged Commodities) Rules, 2011',
+    section: 'Rule 6(1)(c)',
+    title: 'Net Quantity in Standard Metric Units',
+    description:
+      'The net quantity in terms of standard unit of weight or measure of the commodity contained in the package (g, kg, ml, l, m, N/U) adhering strictly to SI metric standards. Non-standard abbreviations (e.g. gms, kgs, ltrs) are prohibited infractions.',
+    categoryScope: 'ALL',
+    mandatoryFields: ['numeric_quantity', 'metric_unit'],
+    validationRegex: '(?:net\\s*(?:wt\\.?|weight|qty\\.?|quantity|vol\\.?|volume|contents?)\\s*[:\\s]*)?\\b\\d+(\\.\\d+)?\\s*(g|kg|ml|l|L|mg|m|cm|mm|N|U|units?)\\b',
+    minFontHeightMm: 3.0,
+    active: true,
+    version: '2024.1.0',
+    lastAmendedDate: '2024-01-01',
+  },
+  {
+    id: 'rule-pcr-6-1-d',
+    ruleCode: 'PCR-2011-R06-1D',
+    actReference: 'Legal Metrology (Packaged Commodities) Rules, 2011',
+    section: 'Rule 6(1)(d)',
+    title: 'Month and Year of Manufacture / Packing / Import',
+    description:
+      'The month and year in which the commodity is manufactured or pre-packed or imported shall be clearly mentioned in MM/YYYY, Month YYYY, or DD/MM/YYYY format.',
+    categoryScope: 'ALL',
+    mandatoryFields: ['month', 'year'],
+    validationRegex: '(0[1-9]|1[0-2])[\\/\\-](20\\d{2})|(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\\s+20\\d{2}',
+    minFontHeightMm: 2.0,
+    active: true,
+    version: '2024.1.0',
+    lastAmendedDate: '2024-01-01',
+  },
+  {
+    id: 'rule-pcr-6-1-e',
+    ruleCode: 'PCR-2011-R06-1E',
+    actReference: 'Legal Metrology (Packaged Commodities) Rules, 2011',
+    section: 'Rule 6(1)(e)',
+    title: 'Maximum Retail Price (MRP inclusive of all taxes)',
+    description:
+      'The retail sale price of the package in terms of Maximum Retail Price (MRP) in Indian Rupees, explicitly stating "inclusive of all taxes" or "incl. of all taxes". Smudged, overlaid, or dual pricing stickers are statutory offenses under Section 36(1).',
+    categoryScope: 'ALL',
+    mandatoryFields: ['currency', 'amount', 'tax_clause'],
+    validationRegex: '(mrp|maximum\\s+retail\\s+price)[:\\s]*(?:rs\\.?|₹)?\\s*\\d+(?:\\.\\d{2})?.*(incl|inclusive)',
+    minFontHeightMm: 3.0,
+    active: true,
+    version: '2024.1.0',
+    lastAmendedDate: '2024-01-01',
+  },
+  {
+    id: 'rule-pcr-6-1-da',
+    ruleCode: 'PCR-2011-R06-1DA',
+    actReference: 'Legal Metrology (Packaged Commodities) Rules, 2011 (Amended 2021)',
+    section: 'Rule 6(1)(da)',
+    title: 'Unit Sale Price (USP)',
+    description:
+      'Declaration of Unit Sale Price in terms of rupees per gram, per milliliter, per piece, or per meter whenever the packaged quantity exceeds 1 kg or 1 liter, or consists of more than one item.',
+    categoryScope: 'ALL',
+    mandatoryFields: ['usp_amount', 'usp_unit'],
+    validationRegex: '(?:usp|unit\\s+sale\\s+price)[:\\s]*(?:rs\\.?|₹|inr)?\\s*\\d+(?:\\.\\d{1,2})?\\s*(?:\\/|per)\\s*(?:100\\s*)?(?:g|kg|ml|l|L|unit|piece|item|N|m|cm)\\b',
+    minFontHeightMm: 2.0,
+    active: true,
+    version: '2024.1.0',
+    lastAmendedDate: '2024-01-01',
+  },
+  {
+    id: 'rule-pcr-6-1-f',
+    ruleCode: 'PCR-2011-R06-1F',
+    actReference: 'Legal Metrology (Packaged Commodities) Rules, 2011',
+    section: 'Rule 6(1)(f)',
+    title: 'Consumer Care & Grievance Redressal Contact Details',
+    description:
+      'The name, telephone number, email address, and physical address of the person who can be contacted by the consumer in case of a complaint or query regarding the pre-packaged commodity.',
+    categoryScope: 'ALL',
+    mandatoryFields: ['phone_or_email', 'contact_designation'],
+    validationRegex: '(consumer\\s+care|customer\\s+care|grievance|helpline).*(?:\\d{10}|[\\w.-]+@[\\w.-]+\\.\\w{2,})',
+    minFontHeightMm: 2.0,
+    active: true,
+    version: '2024.1.0',
+    lastAmendedDate: '2024-01-01',
+  },
+  {
+    id: 'rule-pcr-6-10',
+    ruleCode: 'PCR-2011-R06-10',
+    actReference: 'Legal Metrology (Packaged Commodities) Rules, 2011 & E-Commerce Guidelines',
+    section: 'Rule 6(10)',
+    title: 'Country of Origin / Country of Assembly',
+    description:
+      'Mandatory declaration of Country of Origin or Country of Manufacture or Assembly for all imported goods and packages marketed on e-commerce platforms.',
+    categoryScope: 'ALL',
+    mandatoryFields: ['country'],
+    validationRegex: '(country\\s+of\\s+origin|made\\s+in|produced\\s+in)\\s*[:\\s]*[A-Za-z\\s]+',
+    minFontHeightMm: 2.0,
+    active: true,
+    version: '2024.1.0',
+    lastAmendedDate: '2024-01-01',
+  },
+];
+
